@@ -13,6 +13,7 @@
       "@/*": ["src/*"],
       "@vue/*": ["@vue/*"]
     },
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "declaration": true
   }
 }
