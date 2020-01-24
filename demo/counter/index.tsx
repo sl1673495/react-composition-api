@@ -1,21 +1,36 @@
 import React from 'react';
+import { setup, reactive, computed, effect } from '../../src/index';
 import styles from './index.css';
 
-export interface ButtonProps {
-  size?: 'large' | 'default';
-}
+const Counter: React.FC = setup(() => {
+  const state = reactive({ count: 0 });
+  const plusOne = computed(() => state.count + 1);
 
-const Button: React.FC<ButtonProps> = function(props) {
-  return (
-    <button
-      className={styles.button}
-      style={{
-        fontSize: props.size === 'large' ? 40 : 20,
-      }}
-    >
-      {props.children}
-    </button>
-  );
-};
+  effect(() => {
+    console.log('current count changed', state.count);
+  });
 
-export default Button;
+  effect(() => {
+    console.log('current plusOne', plusOne.value);
+  });
+
+  const add = () => {
+    state.count = state.count + 1;
+  };
+
+  return props => {
+    debugger;
+    return (
+      <>
+        <div>current count is {state.count}</div>
+        <div>current plusOne is {plusOne.value}</div>
+
+        <button onClick={add} className={styles.button}>
+          {props.children}
+        </button>
+      </>
+    );
+  };
+});
+
+export default Counter;

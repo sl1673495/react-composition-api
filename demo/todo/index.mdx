@@ -1,0 +1,69 @@
+---
+name: Todo
+route: /todo
+order: -1
+sidebar: true
+---
+
+import Todo from './';
+
+# Todo Component
+
+<Todo>Hi</Todo>
+
+## Codes
+
+```tsx
+import React from 'react';
+import { setup, ref, reactive } from '../../src/index';
+import styles from './index.css';
+
+interface TodoItem {
+  title: string;
+  done: boolean;
+}
+
+const Todo: React.FC = setup(() => {
+  const todos = reactive<TodoItem[]>([]);
+
+  const inputValue = ref('');
+
+  const add = () => {
+    const title = inputValue.value;
+    if (title) {
+      todos.push({
+        title,
+        done: false,
+      });
+    }
+    inputValue.value = '';
+  };
+
+  return props => {
+    return (
+      <>
+        <input
+          value={inputValue.value}
+          onChange={e => (inputValue.value = e.target.value)}
+          placeholder="请输入待办事项"
+        />
+        <button onClick={add} className={styles.button}>
+          {props.children}
+        </button>
+
+        <TodoUl todos={todos} />
+      </>
+    );
+  };
+});
+
+const TodoUl: React.FC<{ todos: TodoItem[] }> = ({ todos }) => (
+  <ul>
+    {todos.map((todo, index) => {
+      return <li key={index}>{todo.title}</li>;
+    })}
+  </ul>
+);
+
+export default Todo;
+```

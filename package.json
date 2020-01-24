@@ -11,7 +11,9 @@
   "repository": "/react-composition-api",
   "scripts": {
     "dev": "father doc dev",
-    "build": "father build"
+    "build:lib": "father build",
+    "build:doc": "father doc build",
+    "build": "npm run build:lib & npm run build:doc"
   },
   "peerDependencies": {
     "react": "16.x"
