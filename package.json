@@ -1,0 +1,24 @@
+{
+  "name": "react-composition-api",
+  "version": "1.0.0",
+  "description": "use Vue3 reactivity ability in React",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "authors": {
+    "name": "ssh",
+    "email": "949589855@qq.com"
+  },
+  "repository": "/react-composition-api",
+  "scripts": {
+    "dev": "father doc dev",
+    "build": "father build"
+  },
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "devDependencies": {
+    "father": "^2.16.0",
+    "typescript": "^3.7.3"
+  },
+  "license": "MIT"
+}
