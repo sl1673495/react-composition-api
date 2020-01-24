@@ -21,7 +21,8 @@ npm i @vue/reactivity -S
 最简单的demo如下: 
 
 ```tsx
-import { setup, reactive } from 'react-vue-reactivity';
+import { setup } from 'react-vue-reactivity';
+import { reactive } from '@vue/reactivity'
 
 export default setup(() => {
   const data = reactive({ message: 'World' });
