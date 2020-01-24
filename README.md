@@ -12,7 +12,7 @@ https://sl1673495.github.io/react-composition-api
 最简单的demo如下: 
 
 ```tsx
-import { setup, reactive } from 'react-composition-api';
+import { setup, reactive } from 'react-vue-reactivity';
 
 export default setup(() => {
   const data = reactive({ message: 'World' });
