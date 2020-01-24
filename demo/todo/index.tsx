@@ -1,6 +1,6 @@
 import React from 'react';
 import { setup, ref, reactive } from '../../src/index';
-
+import './index.css'
 interface TodoItem {
   title: string;
   done: boolean;
@@ -30,7 +30,7 @@ const Todo: React.FC = setup(() => {
           <input
             value={inputValue.value}
             onChange={e => (inputValue.value = e.target.value)}
-            placeholder="请输入待办事项"
+            placeholder="回车添加待办事项"
           />
         </form>
 
@@ -47,7 +47,7 @@ const TodoUl: React.FC<{ todos: TodoItem[] }> = setup(() => {
       <ul>
         {todos.map((todo, index) => {
           return (
-            <li className={todo.done ? 'done' : ''} onClick={() => onToggle(todo)} key={index}>
+            <li className={todo.done ? 'todo done' : 'todo'} onClick={() => onToggle(todo)} key={index}>
               {todo.title}
             </li>
           );

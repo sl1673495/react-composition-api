@@ -1,7 +1,7 @@
 ---
 name: Todo
 route: /todo
-order: -1
+order: 2
 sidebar: true
 ---
 
@@ -15,9 +15,8 @@ import Todo from './';
 
 ```tsx
 import React from 'react';
-import { setup, ref, reactive } from '../../src/index';
-import styles from './index.css';
-
+import { setup, ref, reactive } from 'react-composition-api';
+import './index.css'
 interface TodoItem {
   title: string;
   done: boolean;
@@ -28,7 +27,8 @@ const Todo: React.FC = setup(() => {
 
   const inputValue = ref('');
 
-  const add = () => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const title = inputValue.value;
     if (title) {
       todos.push({
@@ -42,14 +42,13 @@ const Todo: React.FC = setup(() => {
   return props => {
     return (
       <>
-        <input
-          value={inputValue.value}
-          onChange={e => (inputValue.value = e.target.value)}
-          placeholder="请输入待办事项"
-        />
-        <button onClick={add} className={styles.button}>
-          {props.children}
-        </button>
+        <form onSubmit={onSubmit}>
+          <input
+            value={inputValue.value}
+            onChange={e => (inputValue.value = e.target.value)}
+            placeholder="回车添加待办事项"
+          />
+        </form>
 
         <TodoUl todos={todos} />
       </>
@@ -57,13 +56,22 @@ const Todo: React.FC = setup(() => {
   };
 });
 
-const TodoUl: React.FC<{ todos: TodoItem[] }> = ({ todos }) => (
-  <ul>
-    {todos.map((todo, index) => {
-      return <li key={index}>{todo.title}</li>;
-    })}
-  </ul>
-);
+const TodoUl: React.FC<{ todos: TodoItem[] }> = setup(() => {
+  return ({ todos }) => {
+    const onToggle = (todo: TodoItem) => (todo.done = !todo.done);
+    return (
+      <ul>
+        {todos.map((todo, index) => {
+          return (
+            <li className={todo.done ? 'todo done' : 'todo'} onClick={() => onToggle(todo)} key={index}>
+              {todo.title}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+});
 
 export default Todo;
 ```

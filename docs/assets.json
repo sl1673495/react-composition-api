@@ -1,9 +1,11 @@
 {
-  "vendors.css": "/react-composition-api/static/css/vendors.ae06744cc55864df541f.css",
-  "vendors.js": "/react-composition-api/static/js/vendors.bb208441.js",
-  "app.js": "/react-composition-api/static/js/app.ae06744cc55864df541f.js",
-  "demo-counter-index.css": "/react-composition-api/static/css/demo-counter-index.ae06744cc55864df541f.css",
-  "demo-counter-index.js": "/react-composition-api/static/js/demo-counter-index.7e0d85d7.js",
-  "demo-todo-index.js": "/react-composition-api/static/js/demo-todo-index.752421b0.js",
+  "vendors.css": "/react-composition-api/static/css/vendors.d0c58f3f3f9f38c10617.css",
+  "vendors.js": "/react-composition-api/static/js/vendors.200d63ad.js",
+  "app.js": "/react-composition-api/static/js/app.d0c58f3f3f9f38c10617.js",
+  "demo-counter-index.css": "/react-composition-api/static/css/demo-counter-index.d0c58f3f3f9f38c10617.css",
+  "demo-counter-index.js": "/react-composition-api/static/js/demo-counter-index.80e68f28.js",
+  "demo-index-index.js": "/react-composition-api/static/js/demo-index-index.51b8d805.js",
+  "demo-todo-index.css": "/react-composition-api/static/css/demo-todo-index.d0c58f3f3f9f38c10617.css",
+  "demo-todo-index.js": "/react-composition-api/static/js/demo-todo-index.658a322a.js",
   "index.html": "/react-composition-api/index.html"
 }

@@ -1,0 +1,32 @@
+---
+name: 快速开始
+route: /
+order: 0
+sidebar: true
+---
+
+## 目的
+
+在React中引入@vue/reactivity这个库，使用vue3的响应式能力来管理状态。
+
+简单用法
+
+```tsx
+import { setup, reactive } from 'react-composition-api';
+
+export default setup(() => {
+  const data = reactive({ message: 'World' });
+
+  const change = () => (data.message = 'Hey');
+
+  return props => (
+    <>
+      <span>Hello {data.message}</span>
+      <button onClick={change}>change</button>
+    </>
+  );
+});
+```
+import Index from './index'
+
+<Index />
