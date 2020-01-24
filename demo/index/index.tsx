@@ -1,5 +1,6 @@
 import React from 'react';
-import { setup, reactive } from '../../src';
+import { setup } from '../../src';
+import { reactive } from '@vue/reactivity'
 
 export default setup(() => {
   const data = reactive({ message: 'World' });

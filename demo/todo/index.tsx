@@ -1,6 +1,7 @@
 import React from 'react';
-import { setup, ref, reactive } from '../../src/index';
-import './index.css'
+import { ref, reactive } from '@vue/reactivity';
+import { setup } from '../../src/index';
+import './index.css';
 interface TodoItem {
   title: string;
   done: boolean;
@@ -47,14 +48,18 @@ const TodoUl: React.FC<{ todos: TodoItem[] }> = setup(() => {
       <ul>
         {todos.map((todo, index) => {
           return (
-            <li className={todo.done ? 'todo done' : 'todo'} onClick={() => onToggle(todo)} key={index}>
+            <li
+              className={todo.done ? 'todo done' : 'todo'}
+              onClick={() => onToggle(todo)}
+              key={index}
+            >
               {todo.title}
             </li>
           );
         })}
       </ul>
     );
-  }
+  };
 });
 
 export default Todo;

@@ -1,5 +1,6 @@
 import React from 'react';
-import { setup, reactive, computed, effect } from '../../src/index';
+import { setup } from '../../src/index';
+import { reactive, computed, effect } from '@vue/reactivity'
 import styles from './index.css';
 
 const Counter: React.FC = setup(() => {
