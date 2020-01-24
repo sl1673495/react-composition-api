@@ -5,7 +5,16 @@ Use Vue3 reactivity ability in React
 ## Docs
 https://sl1673495.github.io/react-composition-api
 
+## Why
+1. 直接引入`@vue/reacivity`，完全使用Vue3的reactivity能力 拥有`computed`, `effect`等各种能力，并且对于`set`和`map`也提供了响应式的能力。  
+2. `vue-next`仓库内部完整的测试用例。
+2. 完善的TypeScript类型支持。
+
 ## Usage
+```
+npm i react-vue-reactivity -S
+npm i @vue/reactivity -S
+```
 
 支持[@vue/reactivity](https://www.npmjs.com/package/@vue/reactivity)内部提供的所有api，并在React组件中使用。  
 

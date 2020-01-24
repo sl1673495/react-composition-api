@@ -1,6 +1,6 @@
 {
   "name": "react-vue-reactivity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use Vue3 Composition Api in React, just import @vue/reactivity",
   "main": "lib/index.js",
   "authors": {
