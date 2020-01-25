@@ -2,7 +2,7 @@ import { IBundleOptions } from 'father';
 
 const options: IBundleOptions = {
   doc: {
-    title: 'react-vue-reactivity',
+    title: 'rxv',
     base: process.env.NODE_ENV === 'production' ? '/react-composition-api/' : '',
     dest: 'docs',
     typescript: true,

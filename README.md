@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to rxv 👋</h1>
 <p>
-  <a href="https://www.npmjs.com/package/react-vue-reactivity" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/react-vue-reactivity.svg">
+  <a href="https://www.npmjs.com/package/rxv" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/rxv.svg">
   </a>
   <a href="https://sl1673495.github.io/react-composition-api" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
