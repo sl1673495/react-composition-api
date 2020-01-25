@@ -9,7 +9,7 @@ export default setup(() => {
 
   return props => (
     <>
-      <span>Hello {data.message}</span>
+      <h1>Hello {data.message}</h1>
       <button onClick={change}>change</button>
     </>
   );

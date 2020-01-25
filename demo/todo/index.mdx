@@ -9,15 +9,19 @@ import Todo from './';
 
 # Todo Component
 
+这是一个TodoList的示例，
+
+1. 使用`ref`对基础数据类型做响应式定义。
+2. 把响应式数据传递给子组件。
+
 <Todo>Hi</Todo>
 
 ## Codes
-
 ```tsx
 import React from 'react';
-import { setup } from 'react-vue-reactivity';
 import { ref, reactive } from '@vue/reactivity';
-import './index.css'
+import { setup } from '../../src/index';
+import './index.css';
 interface TodoItem {
   title: string;
   done: boolean;
@@ -64,15 +68,21 @@ const TodoUl: React.FC<{ todos: TodoItem[] }> = setup(() => {
       <ul>
         {todos.map((todo, index) => {
           return (
-            <li className={todo.done ? 'todo done' : 'todo'} onClick={() => onToggle(todo)} key={index}>
+            <li
+              className={todo.done ? 'todo done' : 'todo'}
+              onClick={() => onToggle(todo)}
+              key={index}
+            >
               {todo.title}
             </li>
           );
         })}
       </ul>
     );
-  }
+  };
 });
 
 export default Todo;
+
 ```
+

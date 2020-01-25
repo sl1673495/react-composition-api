@@ -5,14 +5,20 @@ order: 0
 sidebar: true
 ---
 
-## 目的
+# 目的
 
 在React中引入@vue/reactivity这个库，使用vue3的响应式能力来管理状态。
 
-简单用法
+## 简单用法
 
+import Index from './index'
+
+<Index />
+
+## Codes
 ```tsx
-import { setup } from 'react-vue-reactivity';
+import React from 'react';
+import { setup } from '../../src';
 import { reactive } from '@vue/reactivity'
 
 export default setup(() => {
@@ -22,12 +28,11 @@ export default setup(() => {
 
   return props => (
     <>
-      <span>Hello {data.message}</span>
+      <h1>Hello {data.message}</h1>
       <button onClick={change}>change</button>
     </>
   );
 });
-```
-import Index from './index'
 
-<Index />
+```
+
