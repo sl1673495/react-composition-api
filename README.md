@@ -58,6 +58,7 @@ export type Store = typeof store;
 ```
 ```tsx
 // Index.tsx
+import { Provider, useStore } from 'react-vue-reactivity'
 function Count() {
   const countState = useStore((store: Store) => {
     const { state, computed } = store;
