@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to react-vue-reactivity 👋</h1>
+<h1 align="center">Welcome to rxv 👋</h1>
 <p>
   <a href="https://www.npmjs.com/package/react-vue-reactivity" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/react-vue-reactivity.svg">
@@ -17,7 +17,7 @@
 
 ### ✨ [Demo](https://sl1673495.github.io/react-composition-api)
 
-# react-composition-api
+# rxv
 在React应用中使用@vue/reactivity中的所有响应式能力
 
 1. 使用setup在组件中体验Vue-Composition-Api
@@ -36,7 +36,7 @@ https://sl1673495.github.io/react-composition-api
 
 ## Usage
 ```
-npm i react-vue-reactivity -S
+npm i rxv -S
 npm i @vue/reactivity -S
 ```
 
@@ -117,7 +117,7 @@ export default () => {
 
 ### 组件内部使用setup
 ```tsx
-import { setup } from 'react-vue-reactivity';
+import { setup } from 'rxv';
 import { reactive } from '@vue/reactivity'
 
 export default setup(() => {
