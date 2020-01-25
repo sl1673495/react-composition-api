@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> Use Vue3 Composition Api in React just import @vue/reactivity, rxv means React x Vue
+> Use Vue3 Composition Api in React to manage state, just import @vue/reactivity, rxv means React x Vue
 
 ### 🏠 [Homepage](https://github.com/sl1673495/react-composition-api)
 
