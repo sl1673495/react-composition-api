@@ -1,3 +1,2 @@
-import React from 'react';
-declare const setup: <Props extends {} = {}>(factory: () => React.FC<Props>) => React.FC<Props>;
-export { setup };
+export { setup } from './setup';
+export { useStore, Provider, createMutations } from './store';
