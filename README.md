@@ -134,6 +134,7 @@ export default setup(() => {
 });
 ```
 
+## Vue3支持的api
 除了`setup`以外，其他所有的api都是Vue内部提供的。  
 
 具体支持的api，可以看`vue-next`仓库中的导出的api
@@ -171,7 +172,7 @@ export {
 export { lock, unlock } from './lock'
 export { TrackOpTypes, TriggerOpTypes } from './operations'
 ```
-注意`computed`、`ref`这些包装后的值没有提供自动解包功能，必须用`data.value`去读取和赋值。 
+注意`computed`、`ref`这些包装后的值没有提供自动拆包的功能，必须用`data.value`去读取和赋值。 
 
 ## LICENSE
 
