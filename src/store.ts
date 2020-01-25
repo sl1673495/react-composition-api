@@ -41,8 +41,9 @@ export const createMutations = <T extends Record<any, Function>>(mutations: T): 
     const fn = mutations[key];
     prev[key] = (...args: any[]) => {
       pauseTracking();
-      fn(...args);
+      const result = fn(...args);
       resumeTracking();
+      return result
     };
     return prev;
   }, {} as any);
