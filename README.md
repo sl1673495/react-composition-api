@@ -1,5 +1,8 @@
 # react-composition-api
-在React应用中使用@vue/reactivity中的所有响应式能力，体验Vue-Composition-Api。并且可以做全局状态管理。
+在React应用中使用@vue/reactivity中的所有响应式能力
+
+1. 使用setup在组件中体验Vue-Composition-Api
+2. 使用极简的api实现全局状态管理
 
 ## Docs
 https://sl1673495.github.io/react-composition-api
