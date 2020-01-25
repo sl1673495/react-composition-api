@@ -27,8 +27,6 @@ const Counter: React.FC = setup(() => {
         <div>current count is {state.count}</div>
         <div>current plusOne is {plusOne.value}</div>
         <div>current plusTwo is {plusTwo.value}</div>
-
-
         <button onClick={add} className={styles.button}>
           {props.children}
         </button>

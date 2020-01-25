@@ -1,0 +1,141 @@
+---
+name: 全局状态管理store
+route: /store
+order: 5
+sidebar: false
+---
+
+import Counter from './Index';
+
+## 示例
+
+<Counter>Hi</Counter>
+
+
+### store的定义
+```ts
+import { reactive, computed, effect } from '@vue/reactivity';
+
+export const state = reactive({
+  count: 0,
+  message: 'Hello',
+  logs: [] as string[],
+});
+
+const plusOne = computed(() => state.count + 1);
+const plusTwo = computed(() => plusOne.value + 1);
+
+effect(() => {
+  console.log('plusOne changed: ', plusOne);
+});
+
+const add = () => (state.count += 1);
+const log = (log: string) => state.logs.unshift(log);
+const chat = (message: string) => (state.message = message);
+
+export const mutations = {
+  // mutation
+  add,
+  log,
+  chat,
+};
+
+export const store = {
+  state,
+  computed: {
+    plusOne,
+    plusTwo,
+  },
+};
+
+export type Store = typeof store;
+```
+
+## Codes
+```tsx
+import React, { useState, useCallback } from 'react';
+import { Card, Button, Input } from 'antd';
+import { Provider, useStore } from '../../src/store';
+import { store, mutations, Store } from './store';
+import './index.css';
+import 'antd/dist/antd.css';
+
+function Count() {
+  const count = useStore(({ state }: Store) => state.count);
+
+  mutations.log('计数器组件重新渲染💐');
+
+  return (
+    <Card hoverable style={{ marginBottom: 24 }}>
+      <h1>计数器</h1>
+      <div className="chunk">
+        <div className="chunk">store中的count现在是 {count}</div>
+        <Button onClick={mutations.add}>add</Button>
+      </div>
+    </Card>
+  );
+}
+
+function Chat() {
+  const message = useStore(({ state }: Store) => state.message);
+  const [value, setValue] = useState('');
+
+  mutations.log('聊天室组件重新渲染💐');
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    mutations.chat(value);
+  };
+
+  return (
+    <Card hoverable style={{ marginBottom: 24 }}>
+      <h1>聊天室</h1>
+      当前消息是: {message}
+      <form onSubmit={onSubmit}>
+        <Input onChange={e => setValue(e.target.value)} placeholder="请输入消息" />
+      </form>
+    </Card>
+  );
+}
+
+function Logger() {
+  const logs = useStore((store: Store) => {
+    return store.state.logs;
+  });
+
+  return (
+    <Card hoverable>
+      <h1>控制台</h1>
+      <div className="logs">
+        {logs.map((log, idx) => (
+          <p className="log" key={idx}>
+            {log}
+          </p>
+        ))}
+      </div>
+    </Card>
+  );
+}
+
+export default () => {
+  return (
+    <Provider value={store}>
+      <div className="flex">
+        <div className="left">
+          <div className="count">
+            <Count />
+          </div>
+          <div className="chat">
+            <Chat />
+          </div>
+        </div>
+        <div className="right">
+          <Logger />
+        </div>
+      </div>
+    </Provider>
+  );
+};
+
+```
+
