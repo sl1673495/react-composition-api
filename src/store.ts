@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { pauseTracking, resumeTracking } from '@vue/reactivity';
 import { useForceUpdate, useEffection } from './share';
 
 type Selector<T, S> = (store: T) => S;
@@ -18,7 +17,7 @@ const useStoreContext = () => {
 
 /**
  * 在组件中读取全局状态
- * 需要通过传入的函数中收集依赖
+ * 需要通过传入的函数收集依赖
  */
 export const useStore = <T, S>(selector: Selector<T, S>): S => {
   const forceUpdate = useForceUpdate();
