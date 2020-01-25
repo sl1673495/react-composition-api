@@ -90,8 +90,7 @@ export default () => {
 ```
 可以看出来，store的定义完全复用了`@vue/reactivity`中的能力，而不会引入额外的学习成本，并且里面的所有能力都可以完美支持。  
 
-具体的代码和效果可以看文档中相对复杂的示例：  
-https://sl1673495.github.io/react-composition-api/store
+具体的代码和效果可以看[文档](https://sl1673495.github.io/react-composition-api)中的`全局状态管理`
 
 
 ### 组件内部使用setup
