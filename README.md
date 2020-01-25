@@ -27,7 +27,7 @@
 https://sl1673495.github.io/react-composition-api
 
 ## Why
-1. 直接引入`@vue/reacivity`，完全使用Vue3的reactivity能力，拥有`computed`, `effect`等各种能力，并且对于`set`和`map`也提供了响应式的能力。 
+1. 直接引入`@vue/reacivity`，完全使用Vue3的reactivity能力，拥有`computed`, `effect`等各种能力，并且对于`Set`和`Map`也提供了响应式的能力。 
 后续也会随着这个库的更新变得更加完善的和强大。
 2. `vue-next`仓库内部完整的测试用例。
 3. 完善的TypeScript类型支持。
@@ -132,10 +132,14 @@ export default setup(() => {
     </>
   );
 });
-```
+```  
 
-## Vue3支持的api
-除了`setup`以外，其他所有的api都是Vue内部提供的。  
+组件使用setup的方式和Vue-Composition-Api保持了一致，setup返回的是一个`React.FC`函数，  
+
+外层只需要在初始化的时候执行一次，而返回的`FC`则需要每次渲染的时候都重新执行。
+
+## 支持的Vue3 api  
+除了内置的几个api以外，其他所有的api都是Vue内部提供的。  
 
 具体支持的api，可以看`vue-next`仓库中的导出的api
 
@@ -171,7 +175,8 @@ export {
 } from './effect'
 export { lock, unlock } from './lock'
 export { TrackOpTypes, TriggerOpTypes } from './operations'
-```
+```  
+
 注意`computed`、`ref`这些包装后的值没有提供自动拆包的功能，必须用`data.value`去读取和赋值。 
 
 ## LICENSE
