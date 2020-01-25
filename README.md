@@ -8,10 +8,12 @@
 https://sl1673495.github.io/react-composition-api
 
 ## Why
-1. 直接引入`@vue/reacivity`，完全使用Vue3的reactivity能力 拥有`computed`, `effect`等各种能力，并且对于`set`和`map`也提供了响应式的能力。  
+1. 直接引入`@vue/reacivity`，完全使用Vue3的reactivity能力，拥有`computed`, `effect`等各种能力，并且对于`set`和`map`也提供了响应式的能力。 
+后续也会随着这个库的更新变得更加完善的和强大。
 2. `vue-next`仓库内部完整的测试用例。
 3. 完善的TypeScript类型支持。
 4. 完全复用`@vue/reacivity`实现超强的**全局状态管理能力**。
+5. 状态管理中组件级别的精确更新。
 
 ## Usage
 ```
