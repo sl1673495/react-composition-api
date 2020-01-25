@@ -34,7 +34,7 @@ export const useStore = <T extends object, S>(selector: Selector<T, S>): S => {
 };
 
 /**
- * 在mutation执行时不收集依赖 优化型能用
+ * 在mutation执行时不收集依赖 优化性能用
  */
 export const createMutations = <T extends Record<any, Function>>(mutations: T): T => {
   return Object.keys(mutations).reduce((prev, key) => {
