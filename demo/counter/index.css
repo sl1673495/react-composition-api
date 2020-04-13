@@ -1,5 +1,11 @@
+.flex {
+  display: flex;
+}
 
-.button {
-    color: red;
-  }
-  
+.card {
+  margin-bottom: 36px;
+}
+
+.text-chunk {
+  margin-bottom: 12px;
+}

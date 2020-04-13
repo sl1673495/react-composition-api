@@ -1,53 +1,57 @@
 .flex {
-    display: flex;
-  }
-  
-  .left {
-    display: flex;
-    flex-direction: column;
-    height: 70vh;
-    flex-basis: 50%;
-    margin-right: 12px;
-  }
-  
-  .left .count {
-    height: 50%;
-    margin-bottom: 2vh
-  }
-  
-  .left .count .wrap,
-  .left .count .ant-card {
-    height: 100%;
-    margin-bottom: 12px;
-  }
-  
-  .left .chat {
-    height: 50%;
-  }
-  
-  .left .chat .wrap,
-  .left .chat .ant-card {
-    height: 100%;
-  }
-  
-  .right {
-    flex: 1;
-    height: 70vh;
-  }
-  
-  .right .wrap,
-  .right .ant-card {
-    height: 100%;
-  }
-  
-  .right .ant-card {
-    overflow-y: auto;
-  }
-  
-  .card {
-    margin-bottom: 36px;
-  }
-  
-  .log {
-    margin-bottom: 12px;
-  }
+  display: flex;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  flex-basis: 50%;
+  margin-right: 12px;
+}
+
+.left .count {
+  height: 50%;
+  margin-bottom: 2vh;
+}
+
+.left .count .wrap,
+.left .count .ant-card {
+  height: 100%;
+  margin-bottom: 12px;
+}
+
+.left .chat {
+  height: 50%;
+}
+
+.left .chat .wrap,
+.left .chat .ant-card {
+  height: 100%;
+}
+
+.right {
+  flex: 1;
+  height: 70vh;
+}
+
+.right .wrap,
+.right .ant-card {
+  height: 100%;
+}
+
+.right .ant-card {
+  overflow-y: auto;
+}
+
+.card {
+  margin-bottom: 36px;
+}
+
+.log {
+  margin-bottom: 12px;
+}
+
+.text-chunk {
+  margin-bottom: 12px;
+}

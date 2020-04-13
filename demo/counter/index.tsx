@@ -1,38 +1,37 @@
 import React from 'react';
-import { setup } from '../../src/index';
-import { reactive, computed, effect } from '@vue/reactivity'
-import styles from './index.css';
+import { Card, Button } from 'antd';
+import { Provider, useStore } from '../../src/store';
+import { store, mutations, Store } from './store';
+import './index.css';
+import 'antd/dist/antd.css';
 
-const Counter: React.FC = setup(() => {
-  const state = reactive({ count: 0 });
-  const plusOne = computed(() => state.count + 1);
-  const plusTwo = computed(() => plusOne.value + 1);
+function Count() {
+  const countState = useStore((store: Store) => {
+    const { state } = store;
+    const { count } = state;
 
-
-  effect(() => {
-    console.log('current count changed', state.count);
+    return {
+      count,
+    };
   });
 
-  effect(() => {
-    console.log('current plusOne', plusOne.value);
-  });
+  return (
+    <Card hoverable style={{ marginBottom: 24 }}>
+      <h1>计数器</h1>
+      <div className="chunk">
+        <div className="text-chunk">store中的count现在是 {countState.count}</div>
+        <Button onClick={mutations.add}>add</Button>
+      </div>
+    </Card>
+  );
+}
 
-  const add = () => {
-    state.count = state.count + 1;
-  };
-
-  return props => {
-    return (
-      <>
-        <div>current count is {state.count}</div>
-        <div>current plusOne is {plusOne.value}</div>
-        <div>current plusTwo is {plusTwo.value}</div>
-        <button onClick={add} className={styles.button}>
-          {props.children}
-        </button>
-      </>
-    );
-  };
-});
-
-export default Counter;
+export default () => {
+  return (
+    <Provider value={store}>
+      <div className="flex">
+        <Count />
+      </div>
+    </Provider>
+  );
+};

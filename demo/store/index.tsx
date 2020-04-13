@@ -24,9 +24,9 @@ function Count() {
     <Card hoverable style={{ marginBottom: 24 }}>
       <h1>计数器</h1>
       <div className="chunk">
-        <div className="chunk">store中的count现在是 {countState.count}</div>
-        <div className="chunk">computed值中的plusOne现在是 {countState.plusOne.value}</div>
-        <div className="chunk">嵌套computed值中的plusTwo现在是 {countState.plusTwo.value}</div>
+        <div className="text-chunk">store中的count现在是 {countState.count}</div>
+        <div className="text-chunk">computed值中的plusOne现在是 {countState.plusOne.value}</div>
+        <div className="text-chunk">嵌套computed值中的plusTwo现在是 {countState.plusTwo.value}</div>
         <Button onClick={mutations.add}>add</Button>
       </div>
     </Card>
@@ -47,7 +47,7 @@ function Chat() {
   return (
     <Card hoverable style={{ marginBottom: 24 }}>
       <h1>聊天室</h1>
-      当前消息是: {message}
+      <div className="text-chunk">当前消息是: {message}</div>
       <form onSubmit={onSubmit}>
         <Input onChange={e => setValue(e.target.value)} placeholder="请输入消息" />
       </form>
