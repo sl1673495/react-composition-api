@@ -61,6 +61,7 @@ export type Store = typeof store;
 组件：
 ```tsx
 import React from 'react'
+import { Provider, useStore } from 'rxv';
 import { store, add, Store } from './store';
 
 function Count() {
