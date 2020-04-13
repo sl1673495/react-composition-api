@@ -35,26 +35,21 @@ export const store = {
 import React from 'react';
 import { Card, Button } from 'antd';
 import { Provider, useStore } from '../../src/store';
-import { store, mutations, Store } from './store';
+import { store, add, Store } from './store';
 import './index.css';
 import 'antd/dist/antd.css';
 
 function Count() {
-  const countState = useStore((store: Store) => {
-    const { state } = store;
-    const { count } = state;
-
-    return {
-      count,
-    };
-  });
+  const countState = useStore((store: Store) => ({
+    count: store.count,
+  }));
 
   return (
     <Card hoverable style={{ marginBottom: 24 }}>
       <h1>计数器</h1>
       <div className="chunk">
         <div className="text-chunk">store中的count现在是 {countState.count}</div>
-        <Button onClick={mutations.add}>add</Button>
+        <Button onClick={add}>add</Button>
       </div>
     </Card>
   );
