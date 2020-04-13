@@ -42,9 +42,57 @@ npm i @vue/reactivity -S
 
 支持[@vue/reactivity](https://www.npmjs.com/package/@vue/reactivity)内部提供的所有api，并在React组件中使用。  
 
-最简单的demo如下: 
+### 快速上手示例
+store：
+```ts
+import { reactive } from '@vue/reactivity';
 
-### 全局状态管理
+export const state = reactive({
+  count: 0,
+});
+
+export const add = () => (state.count += 1);
+
+export const store = reactive(state)
+
+export type Store = typeof store;
+```
+
+组件：
+```tsx
+import { store, add, Store } from './store';
+
+function Count() {
+  const countState = useStore((store: Store) => ({
+    count: store.count,
+  }));
+
+  return (
+    <Card hoverable style={{ marginBottom: 24 }}>
+      <h1>计数器</h1>
+      <div className="chunk">
+        <div className="text-chunk">store中的count现在是 {countState.count}</div>
+        <Button onClick={add}>add</Button>
+      </div>
+    </Card>
+  );
+}
+
+export default () => {
+  return (
+    <Provider value={store}>
+      <div className="flex">
+        <Count />
+      </div>
+    </Provider>
+  );
+};
+```
+
+### 相对复杂的示例
+
+这个例子里使用了 Vue3 中的 `computed`、`effect` 等能力，是一个相对比较复杂的示例。
+
 ```ts
 // store.ts
 import { reactive, computed, effect } from '@vue/reactivity';
@@ -112,31 +160,7 @@ export default () => {
 ```
 可以看出来，store的定义完全复用了`@vue/reactivity`中的能力，而不会引入额外的学习成本，并且里面的所有能力都可以完美支持。  
 
-具体的代码和效果可以看[文档](https://sl1673495.github.io/react-composition-api)中的`全局状态管理`
-
-
-### 组件内部使用setup
-```tsx
-import { setup } from 'rxv';
-import { reactive } from '@vue/reactivity'
-
-export default setup(() => {
-  const data = reactive({ message: 'World' });
-
-  const change = () => (data.message = 'Hey');
-
-  return props => (
-    <>
-      <span>Hello {data.message}</span>
-      <button onClick={change}>change</button>
-    </>
-  );
-});
-```  
-
-组件使用setup的方式和Vue-Composition-Api保持了一致，setup返回的是一个`React.FC`函数，  
-
-外层只需要在初始化的时候执行一次，而返回的`FC`则需要每次渲染的时候都重新执行。
+具体的代码和效果可以看[文档](https://sl1673495.github.io/react-composition-api)中的 `复杂示例`。
 
 ## 支持的Vue3 api  
 除了内置的几个api以外，其他所有的api都是Vue内部提供的。  
