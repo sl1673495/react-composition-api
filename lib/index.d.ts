@@ -1,2 +1,1 @@
-export { setup } from './setup';
-export { useStore, Provider, createMutations } from './store';
+export { useStore, Provider } from './store';
