@@ -1,11 +1,11 @@
 {
-  "vendors.css": "/react-composition-api/static/css/vendors.6ba9fb59754f87731c75.css",
-  "vendors.js": "/react-composition-api/static/js/vendors.6d82e6e7.js",
-  "app.js": "/react-composition-api/static/js/app.6ba9fb59754f87731c75.js",
-  "demo-counter-index.css": "/react-composition-api/static/css/demo-counter-index.6ba9fb59754f87731c75.css",
-  "demo-counter-index.js": "/react-composition-api/static/js/demo-counter-index.a59f6889.js",
-  "demo-design-index.js": "/react-composition-api/static/js/demo-design-index.4a108bcf.js",
-  "demo-store-index.css": "/react-composition-api/static/css/demo-store-index.6ba9fb59754f87731c75.css",
-  "demo-store-index.js": "/react-composition-api/static/js/demo-store-index.d37f1b23.js",
+  "vendors.css": "/react-composition-api/static/css/vendors.61c47a8fac0667c2e7d5.css",
+  "vendors.js": "/react-composition-api/static/js/vendors.c9ad9709.js",
+  "app.js": "/react-composition-api/static/js/app.61c47a8fac0667c2e7d5.js",
+  "demo-counter-index.css": "/react-composition-api/static/css/demo-counter-index.61c47a8fac0667c2e7d5.css",
+  "demo-counter-index.js": "/react-composition-api/static/js/demo-counter-index.466bfe85.js",
+  "demo-design-index.js": "/react-composition-api/static/js/demo-design-index.b92ddcf9.js",
+  "demo-store-index.css": "/react-composition-api/static/css/demo-store-index.61c47a8fac0667c2e7d5.css",
+  "demo-store-index.js": "/react-composition-api/static/js/demo-store-index.d88d3e51.js",
   "index.html": "/react-composition-api/index.html"
 }

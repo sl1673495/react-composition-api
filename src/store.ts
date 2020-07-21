@@ -24,7 +24,10 @@ export const useStore = <T, S>(selector: Selector<T, S>): S => {
   const store = useStoreContext();
 
   const effection = useEffection(() => selector(store), {
-    scheduler: forceUpdate,
+    scheduler: job => {
+      if (job() === undefined) return;
+      forceUpdate();
+    },
     lazy: true,
   });
 
