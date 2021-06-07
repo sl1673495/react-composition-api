@@ -13,6 +13,8 @@
 
 > Use Vue3 Composition Api in React to manage state, just import @vue/reactivity, rxv means React x Vue
 
+本项目为学习性质，不建议用于生产环境！
+
 ### 🏠 [Homepage](https://github.com/sl1673495/react-composition-api)
 
 ### ✨ [Demo](https://sl1673495.github.io/react-composition-api)
