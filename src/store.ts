@@ -19,7 +19,7 @@ const useStoreContext = () => {
  * 在组件中读取全局状态
  * 需要通过传入的函数收集依赖
  */
-export const useStore = <T, S>(selector: Selector<T, S>): S => {
+export const useStore = <T, S>(selector: Selector<T, S>, changes?: any[]): S => {
   const forceUpdate = useForceUpdate();
   const store = useStoreContext();
 
@@ -29,7 +29,7 @@ export const useStore = <T, S>(selector: Selector<T, S>): S => {
       forceUpdate();
     },
     lazy: true,
-  });
+  }, changes);
 
   const value = effection();
   return value;
